@@ -16,7 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite import views
+from mysite.views import homepage,lotto,index,showpost,mychart
 urlpatterns = [
-	path('', views.index),
+    path('post/<str:slug>/',showpost),
+	path('',homepage),
     path('admin/', admin.site.urls),
+    path('lotto/',lotto),
+    path('index/',index),
+    path('mychart/',mychart),
 ]
